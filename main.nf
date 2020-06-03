@@ -170,6 +170,8 @@ if(!params.keep_phix) {
  */
 if ( params.host_fasta && params.host_genome) {
     exit 1, "Both host fasta reference and iGenomes genome are specififed to remove host contamination! Invalid combination, please specify either --host_fasta or --host_genome."
+} else if ( params.manifest && (params.host_fasta || params.host_genome) ) {
+    exit 1, "Invalid parameter combination, currently host read removal is only supported for short reads."
 }
 
 if ( params.host_genome ) {
