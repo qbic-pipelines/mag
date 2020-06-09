@@ -21,8 +21,8 @@ jobs:
           sudo mv nextflow /usr/local/bin/
       - name: Pull docker image
         run: |
-          docker pull nfcore/mag:dev
-          docker tag nfcore/mag:dev nfcore/mag:dev
+          docker pull qbicpipelines/nf-core-mag:1.1.0dev-hr1
+          docker tag qbicpipelines/nf-core-mag:1.1.0dev-hr1 qbicpipelines/nf-core-mag:1.1.0dev-hr1
       - name: Run pipeline with test data
         run: |
           nextflow run ${GITHUB_WORKSPACE} -profile test,docker
